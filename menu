@@ -1,110 +1,97 @@
-[begin] (Apps)
-
-  [exec] (Terminal) 	{lxterminal}       <~/.fluxbox/icons/apps/lxterminal.png>
-  [exec] (Chrome)       {google-chrome}    <~/.fluxbox/icons/apps/google-chrome.png>
-  [exec] (PCManFM)      {pcmanfm}          <~/.fluxbox/icons/apps/xfce-filemanager.png>
-  [exec] (Geany)        {geany}            <~/.fluxbox/icons/apps/geany.png>
-  [exec] (Atom)         {atom}             <~/.fluxbox/icons/apps/atom.png>       
-  [exec] (Writer)       {lowriter}         <~/.fluxbox/icons/apps/libreoffice-writer.png>
-  [exec] (Spotify)      {spotify}          <~/.fluxbox/icons/web/web-spotify.png>
-  
-  [separator]
-
-  [submenu] (Science)
-    [exec] (MATLAB)   	{xterm -fn 7x13 -e ~/opt/matlab/bin/matlab} <~/.fluxbox/more/matlab.png>
-    [exec] (RStudio)    {rstudio}              <~/.fluxbox/more/rstudio.png>  
-    [exec] (Eclipse)    {~/opt/eclipse/eclipse}<~/.fluxbox/icons/apps/eclipse.png>  
-    [exec] (JabRef)     {~/env/bin/jabref}     <~/.fluxbox/more/jabref.png>
-    [exec] (FSLeyes)    {fsleyes}
-    [exec] (MRICron)    {mricron}              <~/.fluxbox/more/mricron.png>
-    [exec] (Mango)      {~/env/bin/mango}      <~/.fluxbox/icons/apps/sun-java.png>
-    [exec] (Jalapeno)   {vinagre localhost:5904} <~/.fluxbox/icons/apps/preferences-desktop-remote-desktop.png>
-  [end]
-
-  [submenu] (System)
-    [exec] (Control Center)      {unity-control-center}
-    [exec] (Monitor Settings)    {lxrandr}
-    [exec] (System Informaton)   {hardinfo}
-    [exec] (Software & Updates)  {gksu software-properties-gtk}
-    [exec] (Printers)            {system-config-printer}
-    [exec] (Appearance)          {lxappearance}
-    [exec] (Nvidia)              {nvidia-settings}
-    [exec] (Disks)               {xterm -e pkexec gnome-disks}
-    [exec] (Software Updater)    {gksu update-manager}
-    [exec] (Power Manager)       {xfce4-power-manager-settings}
-    [exec] (Seahorse)            {seahorse}
-  [end]
-
-  [submenu] (More Apps)
-    [exec] (Firefox)      {firefox}          <~/.fluxbox/icons/apps/firefox.png>
-    [exec] (Gimp)         {gimp}             <~/.fluxbox/icons/apps/gimp.png>
-    [exec] (Skype)        {skypeforlinux}            <~/.fluxbox/icons/apps/skype.png>
-    [exec] (Transmission) {transmission-gtk} <~/.fluxbox/icons/apps/transmission.png>
-    [exec] (FileZilla)    {filezilla}        <~/.fluxbox/icons/apps/filezilla.png>
-    [exec] (Scribus)      {scribus}          <~/.fluxbox/icons/apps/scribus.png>
-    [exec] (EasyTAG)      {easytag}          <~/.fluxbox/icons/apps/easytag.png>
-    [separator]
-    [exec] (VirtualBox)   {virtualbox}       <~/.fluxbox/icons/apps/virtualbox.png>  
-    [exec] (X2Go Client)  {x2goclient}       <~/.fluxbox/icons/apps/preferences-desktop-remote-desktop.png>
-    [exec] (Remmina)      {remmina}          <~/.fluxbox/icons/apps/preferences-desktop-remote-desktop.png>
-    [separator]
-    [exec] (Steam)        {steam}
-    [exec] (FlightGear)   {fgrun}            <~/.fluxbox/more/flightgear.png>
-    [exec] (Mumble)       {mumble}           <~/.fluxbox/more/mumble.png>
-    [exec] (RMD)          {gtk-recordmydesktop}  <~/.fluxbox/icons/apps/gtk-recordmydesktop.png>    
-  [end]
-
-  [submenu] (Tools)
-    [submenu] (Change screens)
-      [exec] (carbon: IDH)             {xrandr --output DP1   --auto --output LVDS1 --off}
-      [exec] (carbon: Lakeside/TV)     {xrandr --output HDMI1 --auto --output LVDS1 --off}
-      [separator]
-      [exec] (carbon: Clone 768)       {xrandr --output DP1   --mode 1024x768   --same-as  LVDS1 --output LVDS1 --mode 1024x768}
-      [exec] (carbon: Clone HDMI)      {xrandr --output HDMI1 --mode 1024x768   --same-as  LVDS1 --output LVDS1 --mode 1024x768}
-      [exec] (carbon: Present HDMI)    {xrandr --output HDMI1 --mode 1920x1080i --right-of LVDS1 --output LVDS1 --auto --primary}
-      [separator]
-      [exec] (alderaan: 3 screens) {xrandr --output DP-0 --auto --primary --output DVI-I-0 --auto --left-of DP-0 --output DP-3 --auto --right-of DP-0}
-      [exec] (alderaan: 1 screen)  {xrandr --output DP-0 --auto --primary --output DVI-I-0 --off --output DP-3 --off}
-    [end]
-
-    [submenu] (Background)
-      [submenu] (Pattern)
-        [wallpapers] (~/.fluxbox/pattern) {fbsetbg -t}
-      [end]
-      [submenu] (Wallpapers)
-        [wallpapers] (~/.fluxbox/wallpapers) {fbsetbg -a}
-      [end]
-      [submenu] (Ubuntu)
-        [wallpapers] (/usr/share/backgrounds) {fbsetbg -a}
-      [end]
-    [end]      
-
-    [exec] (Screenruler)               {screenruler}
-    [exec] (Screenshot)                {gnome-screenshot -a}
-    [exec] (Screenshot (window\)) {xwd -out ~/screen.xwd; convert ~/screen.xwd ~/screen.png; rm ~/screen.xwd}
-  [end]
-  
-  [submenu] (Program Menu)
-    [include] (/etc/X11/fluxbox/fluxbox-menu)
-  [end]
-  
-  [separator]
-  [submenu] (Screen)
-    [exec] (to monitor) {xrandr --output DP-1   --auto --output LVDS-1 --off; fbsetbg -l}
-    [exec] (to laptop)  {xrandr --output DP-1   --off  --output LVDS-1 --autoi; fbsetbg -l}
-  [end]
-  [submenu] (Mouse)
-    [exec] (is left)     {xmodmap -e "pointer =   3 2 1"}
-    [exec] (is right)    {xmodmap -e "pointer =   1 2 3"}
-  [end]
-  [restart] (Refresh Fluxbox)
-  
-  [submenu] (Exit)
-    [exec] (Lock)     {gnome-screensaver-command -l}
-    [exec] (Suspend)  {sudo pm-suspend}
-    [exec] (Exit)     {~/bin/mount.private -u; killall fluxbox}
-    [exec] (Reboot)   {~/bin/mount.private -u; /sbin/reboot}
-    [exec] (Poweroff) {~/bin/mount.private -u; /sbin/halt -p}
-  [end]
-
+# Generated by fluxbox-generate_menu
+#
+# If you read this it means you want to edit this file manually, so here
+# are some useful tips:
+#
+# - You can add your own menu-entries to ~/.fluxbox/usermenu
+#
+# - If you miss apps please let me know and I will add them for the next
+#   release.
+#
+# - The -r option prevents removing of empty menu entries and lines which
+#   makes things much more readable.
+#
+# - To prevent any other app from overwriting your menu
+#   you can change the menu name in ~/.fluxbox/init to:
+#     session.menuFile: ~/.fluxbox/my-menu
+[begin] (Fluxbox)
+[encoding] {UTF-8}
+      [exec] (konsole) {konsole} 
+      [exec] (w3m) {konsole -e w3m fluxbox.org} 
+      [exec]   (Run) {fbrun} 
+[submenu] (Terminals)
+      [exec]   (xterm) {xterm} 
+      [exec]   (konsole) {konsole} 
+[end]
+[submenu] (Net)
+[submenu] (Browsers)
+      [exec]   (w3m) {konsole -e w3m fluxbox.org} 
+[end]
+[submenu] (IRC)
+      [exec]   (konversation) {konversation} 
+      [exec]   (ninja) {konsole -e ninja} 
+[end]
+[submenu] (FTP)
+      [exec]   (ftp) {konsole -e ftp} 
+[end]
+[end]
+[submenu] (Editors)
+      [exec]   (kate) {kate} 
+      [exec]   (emacs) {emacs} </usr/share/emacs/28.2/etc/images/icons/hicolor/16x16/apps/emacs.png>
+      [exec]   (nano) {konsole -e nano} 
+      [exec]   (vim) {konsole -e vim} 
+      [exec]   (vi) {konsole -e vi} 
+      [exec]   (emacs-nw) {konsole -e emacs -nw} </usr/share/emacs/28.2/etc/images/icons/hicolor/16x16/apps/emacs.png>
+[end]
+[submenu] (File utils)
+      [exec]   (mc) {konsole -e mc} 
+[end]
+[submenu] (Multimedia)
+[submenu] (Graphics)
+      [exec]   (tuxpaint) {tuxpaint} 
+[end]
+[submenu] (Audio)
+      [exec]   (alsamixer) {konsole -e alsamixer} 
+[end]
+[submenu] (Video)
+      [exec]   (vlc) {vlc} 
+[end]
+[submenu] (X-utils)
+      [exec]   (xclock) {xclock} 
+      [exec] (Reload .Xdefaults) {xrdb -load $HOME/.Xdefaults} 
+[end]
+[end]
+[submenu] (Office)
+      [exec]   (xclock) {xclock} 
+[end]
+[submenu] (System Tools)
+      [exec]   (top) {konsole -e top} 
+      [exec]   (htop) {konsole -e htop} 
+[end]
+[submenu] (Fluxbox menu)
+      [config] (Configure) 
+[submenu] (Styles)
+      [include] (/usr/share/fluxbox/menu.d/styles/) 
+[end]
+      [workspaces] (Workspace List) 
+[submenu] (Tools)
+      [exec] (Window name) {xprop WM_CLASS|cut -d \" -f 2|xmessage -file - -center} 
+      [exec] (Screenshot - JPG) {import screenshot.jpg && display -resize 50% screenshot.jpg} 
+      [exec] (Screenshot - PNG) {import screenshot.png && display -resize 50% screenshot.png} 
+      [exec] (Run) {fbrun} 
+      [exec] (Regen Menu) {fluxbox-generate_menu} 
+[end]
+[submenu] (Window Managers)
+      [restart] (mwm) {mwm} 
+      [restart] (twm) {twm} 
+      [restart] (icewm) {icewm} </usr/share/icewm/themes/CrystalBlue/taskbar/icewm.xpm>
+[end]
+      [commanddialog] (Fluxbox Command) 
+      [reconfig] (Reload config) 
+      [restart] (Restart) 
+      [exec] (About) {(fluxbox -v; fluxbox -info | sed 1d) | xmessage -file - -center} 
+      [separator] 
+      [exit] (Exit) 
+[end]
+[endencoding]
 [end]
