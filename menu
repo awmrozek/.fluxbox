@@ -16,7 +16,10 @@
 #     session.menuFile: ~/.fluxbox/my-menu
 [begin] (Fluxbox)
 [encoding] {UTF-8}
+      [exec] (Stable Diffusion) {firefox-bin http://127.0.0.1:7860}
       [exec] (konsole) {konsole} 
+      [exec] (gwenview) {gwenview ~/Downloads} 
+      [exec] (dolphin) {dolphin}
       [exec] (w3m) {konsole -e w3m fluxbox.org} 
       [exec]   (Run) {fbrun} 
 [submenu] (Terminals)
