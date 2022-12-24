@@ -10,12 +10,11 @@
 # Applications you want to run with fluxbox.
 # MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN ''&'' AT THE END.
 #
-~/bin/mount.private &
-dropbox start &
+#~/bin/mount.private &
 nm-applet &
 xfce4-power-manager &
-skypeforlinux &
 fbsetbg -l
+fbsetroot -solid navy
 
 # And last but not least we start fluxbox.
 # Because it is the last app you have to run it with ''exec'' before it.
