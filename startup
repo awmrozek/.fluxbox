@@ -10,10 +10,12 @@
 # Applications you want to run with fluxbox.
 # MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN ''&'' AT THE END.
 #
-#~/bin/mount.private &
-nm-applet &
-xfce4-power-manager &
-fbsetbg -l
+# Not needed since network managmenet is system-wide
+# nm-applet &
+# Not needed either as this is a server now
+#xfce4-power-manager &
+# The server runs via remote vnc, so wallpaper is not needed
+#fbsetbg -l
 fbsetroot -solid navy
 
 # And last but not least we start fluxbox.
